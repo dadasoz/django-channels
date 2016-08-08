@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        
+        socket = new WebSocket("ws://" + window.location.host + "/mychannel/");
+        socket.onmessage = function(e) {
+            $("#mychannel-chat").append(e.data+"<br>");
+        }
+        socket.onopen = function() {
+            socket.send("hello world");
+        }
+    </script>
+
+</head>
+<body>
+
+
+<div id="mychannel-chat">
+    
+</div>
+
+</body>
+</html>
