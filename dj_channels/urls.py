@@ -6,6 +6,6 @@ from mychannel import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^new/$', views.index),
+    url(r'^new/$', views.new),
     url(r'^admin/', include(admin.site.urls)),
 ]
